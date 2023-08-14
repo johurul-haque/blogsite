@@ -2,26 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer base {
+  html,
+  body {
+    height: 100%;
   }
+
+  #__next {
+    @apply flex flex-col min-h-full;
+  }
+
+  header, main {
+    @apply max-w-7xl mx-auto w-full shadow-[0_0_0_100vmax_rgb(7_7_7)] [clip-path:inset(0_-100vmax)];
+  }
+
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer components {
+  div[role="tablist"] button {
+    @apply sm:hover:bg-white sm:hover:text-primary px-1 transition-colors duration-200;
+  }
+
+  div[role="tablist"] button:first-child {
+    @apply max-md:ml-7 shrink-0;
+  }
+
+  div[role="tablist"] button:last-child {
+    @apply max-md:mr-2;
+  }
 }
