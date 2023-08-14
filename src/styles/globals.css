@@ -12,22 +12,22 @@
     @apply flex flex-col min-h-full;
   }
 
-  header, main {
+  header,
+  main {
     @apply max-w-7xl mx-auto w-full shadow-[0_0_0_100vmax_rgb(7_7_7)] [clip-path:inset(0_-100vmax)];
   }
-
 }
 
 @layer components {
-  div[role="tablist"] button {
+  div[role='tablist'] button {
     @apply sm:hover:bg-white sm:hover:text-primary px-1 transition-colors duration-200;
   }
 
-  div[role="tablist"] button:first-child {
-    @apply max-md:ml-7 shrink-0;
+  div[role='tablist'] button:first-child {
+    @apply max-md:ml-5 shrink-0;
   }
 
-  div[role="tablist"] button:last-child {
-    @apply max-md:mr-2;
+  div[role='tablist'] button:last-child {
+    @apply max-md:mr-7;
   }
 }
